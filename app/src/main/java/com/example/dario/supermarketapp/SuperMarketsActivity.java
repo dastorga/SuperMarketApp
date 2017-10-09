@@ -25,27 +25,16 @@ import java.util.List;
 public class SuperMarketsActivity extends AppCompatActivity {
 
     List<DataAdapter> ListOfdataAdapter;
-
     RecyclerView recyclerView;
-
-    String HTTP_JSON_URL = "http://androidblog.esy.es/ImageJsonData.php";
-
+    String HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/ImageJsonData.php";
     String Image_Name_JSON = "image_title";
-
     String Image_URL_JSON = "image_url";
-
     JsonArrayRequest RequestOfJSonArray ;
-
     RequestQueue requestQueue ;
-
     View view ;
-
     int RecyclerViewItemPosition ;
-
     RecyclerView.LayoutManager layoutManagerOfrecyclerView;
-
     RecyclerView.Adapter recyclerViewadapter;
-
     ArrayList<String> ImageTitleNameArrayListForClick;
 
     @Override
@@ -92,6 +81,7 @@ public class SuperMarketsActivity extends AppCompatActivity {
 
                     // Showing RecyclerView Clicked Item value using Toast.
                     Toast.makeText(SuperMarketsActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
+//                    startActivity(new Intent(getApplicationContext(), SuperMarketsActivity.class));
                 }
 
                 return false;

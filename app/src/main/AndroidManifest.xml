@@ -22,6 +22,11 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".SuperMarketsActivity"
+            android:label="MainActivity2"
+            android:parentActivityName=".MainActivity">
+        </activity>
+
     </application>
 
 </manifest>

@@ -117,23 +117,25 @@ public class ProductActivity extends AppCompatActivity {
         requestQueue.add(RequestOfJSonArray);
     }
 
-    public void ParseJSonResponse(JSONArray array){
+    public void ParseJSonResponse(JSONArray array) {
+
+        Bundle bundle = getIntent().getExtras();
+        int dato = bundle.getInt("id_super");
+
         for(int i = 0; i<array.length(); i++) {
             DataAdapter GetDataAdapter2 = new DataAdapter();
             JSONObject json = null;
             try {
 
-                Bundle bundle = getIntent().getExtras();
-                int dato = bundle.getInt("id_super");
+                json = array.getJSONObject(i);
+                if(json.getInt("id_super") == dato){
+                    Toast.makeText(ProductActivity.this, "la concha de la lora!!!", Toast.LENGTH_LONG).show();
+                    GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+                    // Adding image title name in array to display on RecyclerView click event.
+                    ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
+                    GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
 
-                    json = array.getJSONObject(i);
-                    if(7 == dato){
-                        GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
-                        // Adding image title name in array to display on RecyclerView click event.
-                        ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-                        GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
-                    }
-
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -143,4 +145,6 @@ public class ProductActivity extends AppCompatActivity {
         recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
         recyclerView.setAdapter(recyclerViewadapter);
     }
+
+
 }

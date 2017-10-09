@@ -1,4 +1,8 @@
-package com.example.dario.supermarketapp.dummy;
+package com.example.dario.supermarketapp;
+
+/**
+ * Created by dario on 9/10/17.
+ */
 
 import android.content.Context;
 import android.graphics.Bitmap;

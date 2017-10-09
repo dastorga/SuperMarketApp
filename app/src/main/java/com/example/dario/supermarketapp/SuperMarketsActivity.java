@@ -64,7 +64,6 @@ public class SuperMarketsActivity extends AppCompatActivity {
 
                 @Override
                 public boolean onSingleTapUp(MotionEvent motionEvent) {
-
                     return true;
                 }
 
@@ -75,40 +74,31 @@ public class SuperMarketsActivity extends AppCompatActivity {
                 view = Recyclerview.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
 
                 if(view != null && gestureDetector.onTouchEvent(motionEvent)) {
-
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(view);
-
                     // Showing RecyclerView Clicked Item value using Toast.
                     Toast.makeText(SuperMarketsActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
-//                    startActivity(new Intent(getApplicationContext(), SuperMarketsActivity.class));
+//                    startActivity(new Intent(getApplicationContext(), otraClass.class));
                 }
-
                 return false;
             }
 
             @Override
             public void onTouchEvent(RecyclerView Recyclerview, MotionEvent motionEvent) {
-
             }
 
             @Override
             public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
             }
         });
-
 
     }
 
     public void JSON_HTTP_CALL(){
-
         RequestOfJSonArray = new JsonArrayRequest(HTTP_JSON_URL,
-
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-
                         ParseJSonResponse(response);
                     }
                 },
@@ -118,18 +108,13 @@ public class SuperMarketsActivity extends AppCompatActivity {
 
                     }
                 });
-
         requestQueue = Volley.newRequestQueue(SuperMarketsActivity.this);
-
         requestQueue.add(RequestOfJSonArray);
     }
 
     public void ParseJSonResponse(JSONArray array){
-
         for(int i = 0; i<array.length(); i++) {
-
             DataAdapter GetDataAdapter2 = new DataAdapter();
-
             JSONObject json = null;
             try {
 
@@ -143,14 +128,11 @@ public class SuperMarketsActivity extends AppCompatActivity {
                 GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
 
             } catch (JSONException e) {
-
                 e.printStackTrace();
             }
             ListOfdataAdapter.add(GetDataAdapter2);
         }
-
         recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
-
         recyclerView.setAdapter(recyclerViewadapter);
     }
 }

@@ -1,5 +1,6 @@
 package com.example.dario.supermarketapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,14 +9,17 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,9 +80,10 @@ public class SuperActivity extends AppCompatActivity {
                     // Showing RecyclerView Clicked Item value using Toast.
                     Toast.makeText(SuperActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
 
+                    Intent intent = new  Intent(getApplicationContext(), ProductActivity.class);
+                    intent.putExtra("id_super",RecyclerViewItemPosition+1);
+                    startActivity(intent);
 
-
-//                    startActivity(new Intent(getApplicationContext(), otraClass.class));
                 }
                 return false;
             }

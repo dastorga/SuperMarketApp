@@ -17,13 +17,10 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     Context context;
-
     List<DataAdapter> dataAdapters;
-
     ImageLoader imageLoader;
 
     public RecyclerViewAdapter(List<DataAdapter> getDataAdapter, Context context){
-
         super();
         this.dataAdapters = getDataAdapter;
         this.context = context;
@@ -31,11 +28,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview, parent, false);
-
         ViewHolder viewHolder = new ViewHolder(view);
-
         return viewHolder;
     }
 
@@ -43,9 +37,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(ViewHolder Viewholder, int position) {
 
         DataAdapter dataAdapterOBJ =  dataAdapters.get(position);
-
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
-
         imageLoader.get(dataAdapterOBJ.getImageUrl(),
                 ImageLoader.getImageListener(
                         Viewholder.VollyImageView,//Server Image
@@ -55,9 +47,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         );
 
         Viewholder.VollyImageView.setImageUrl(dataAdapterOBJ.getImageUrl(), imageLoader);
-
         Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
-
     }
 
     @Override
@@ -71,13 +61,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public NetworkImageView VollyImageView ;
 
         public ViewHolder(View itemView) {
-
             super(itemView);
-
             ImageTitleTextView = (TextView) itemView.findViewById(R.id.ImageNameTextView) ;
-
             VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView) ;
-
         }
     }
 }

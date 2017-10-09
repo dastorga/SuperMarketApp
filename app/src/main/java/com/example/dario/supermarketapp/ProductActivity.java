@@ -8,27 +8,29 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
-
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class SuperMarketsActivity extends AppCompatActivity {
+
+public class ProductActivity extends AppCompatActivity {
 
     List<DataAdapter> ListOfdataAdapter;
     RecyclerView recyclerView;
-    String HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/ImageJsonData.php";
+    String PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/ProductsJsonData.php";
+
+    String Id_Product_JSON = "id_product";
+    String Id_Super_JSON = "id_super"; //Foreing Key
     String Image_Name_JSON = "image_title";
     String Image_URL_JSON = "image_url";
+
     JsonArrayRequest RequestOfJSonArray ;
     RequestQueue requestQueue ;
     View view ;
@@ -41,13 +43,13 @@ public class SuperMarketsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main_2);
+        setContentView(R.layout.activity_main_3);
 
         ImageTitleNameArrayListForClick = new ArrayList<>();
 
         ListOfdataAdapter = new ArrayList<>();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerview1);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerview2);
 
         recyclerView.setHasFixedSize(true);
 
@@ -60,7 +62,7 @@ public class SuperMarketsActivity extends AppCompatActivity {
         // Implementing Click Listener on RecyclerView.
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
-            GestureDetector gestureDetector = new GestureDetector(SuperMarketsActivity.this, new GestureDetector.SimpleOnGestureListener() {
+            GestureDetector gestureDetector = new GestureDetector(ProductActivity.this, new GestureDetector.SimpleOnGestureListener() {
 
                 @Override
                 public boolean onSingleTapUp(MotionEvent motionEvent) {
@@ -77,8 +79,9 @@ public class SuperMarketsActivity extends AppCompatActivity {
                     //Getting RecyclerView Clicked Item value.
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(view);
                     // Showing RecyclerView Clicked Item value using Toast.
-                    Toast.makeText(SuperMarketsActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
-//                    startActivity(new Intent(getApplicationContext(), otraClass.class));
+                    Toast.makeText(ProductActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
+
+
                 }
                 return false;
             }
@@ -95,7 +98,7 @@ public class SuperMarketsActivity extends AppCompatActivity {
     }
 
     public void JSON_HTTP_CALL(){
-        RequestOfJSonArray = new JsonArrayRequest(HTTP_JSON_URL,
+        RequestOfJSonArray = new JsonArrayRequest(PRODUCT_HTTP_JSON_URL,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
@@ -108,7 +111,7 @@ public class SuperMarketsActivity extends AppCompatActivity {
 
                     }
                 });
-        requestQueue = Volley.newRequestQueue(SuperMarketsActivity.this);
+        requestQueue = Volley.newRequestQueue(ProductActivity.this);
         requestQueue.add(RequestOfJSonArray);
     }
 

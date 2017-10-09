@@ -71,7 +71,6 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -84,9 +83,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) { //SUPERMERCADOS
-            startActivity(new Intent(getApplicationContext(), SuperMarketsActivity.class));
+            startActivity(new Intent(getApplicationContext(), SuperActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(getApplicationContext(), ProductActivity.class));
 
         } else if (id == R.id.nav_manage) {
 

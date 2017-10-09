@@ -23,7 +23,7 @@
         </activity>
 
         <activity android:name=".SuperMarketsActivity"
-            android:label="Supermercados Aderidos"
+            android:label="Supermercados Adheridos"
             android:parentActivityName=".MainActivity">
         </activity>
 

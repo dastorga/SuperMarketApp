@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(getApplicationContext(), SuperActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
-            startActivity(new Intent(getApplicationContext(), ProductActivity.class));
+//            startActivity(new Intent(getApplicationContext(), ProductActivity.class));
 
         } else if (id == R.id.nav_manage) {
 

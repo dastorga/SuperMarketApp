@@ -22,14 +22,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SuperActivity"
+        <activity
+            android:name=".SuperActivity"
             android:label="Supermercados Adheridos"
             android:parentActivityName=".MainActivity">
         </activity>
 
-        <activity android:name=".ProductActivity"
+        <activity
+            android:name=".ProductActivity"
             android:label="Productos"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".SuperActivity">
         </activity>
 
     </application>

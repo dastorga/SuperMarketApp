@@ -8,14 +8,17 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,7 +84,6 @@ public class ProductActivity extends AppCompatActivity {
                     // Showing RecyclerView Clicked Item value using Toast.
                     Toast.makeText(ProductActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
 
-
                 }
                 return false;
             }
@@ -121,14 +123,17 @@ public class ProductActivity extends AppCompatActivity {
             JSONObject json = null;
             try {
 
-                json = array.getJSONObject(i);
+                Bundle bundle = getIntent().getExtras();
+                int dato = bundle.getInt("id_super");
 
-                GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+                    json = array.getJSONObject(i);
+                    if(7 == dato){
+                        GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+                        // Adding image title name in array to display on RecyclerView click event.
+                        ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
+                        GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
+                    }
 
-                // Adding image title name in array to display on RecyclerView click event.
-                ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-
-                GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
 
             } catch (JSONException e) {
                 e.printStackTrace();

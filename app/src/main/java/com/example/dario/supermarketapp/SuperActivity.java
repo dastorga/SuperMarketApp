@@ -1,6 +1,5 @@
 package com.example.dario.supermarketapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -79,10 +78,6 @@ public class SuperActivity extends AppCompatActivity {
                     RecyclerViewItemPosition = Recyclerview.getChildAdapterPosition(view);
                     // Showing RecyclerView Clicked Item value using Toast.
                     Toast.makeText(SuperActivity.this, ImageTitleNameArrayListForClick.get(RecyclerViewItemPosition), Toast.LENGTH_LONG).show();
-
-                    Intent intent = new  Intent(getApplicationContext(), ProductActivity.class);
-                    intent.putExtra("id_super",RecyclerViewItemPosition+1);
-                    startActivity(intent);
 
                 }
                 return false;

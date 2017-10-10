@@ -1,9 +1,5 @@
 package com.example.dario.supermarketapp;
 
-/**
- * Created by dario on 9/10/17.
- */
-
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

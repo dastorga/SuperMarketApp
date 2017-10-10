@@ -1,8 +1,5 @@
 package com.example.dario.supermarketapp;
 
-/**
- * Created by dario on 9/10/17.
- */
 
 public class DataAdapter {
 

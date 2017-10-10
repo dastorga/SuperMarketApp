@@ -123,18 +123,17 @@ public class ProductActivity extends AppCompatActivity {
     public void ParseJSonResponse(JSONArray array) throws JSONException {
 
         int j = 0;
-        while (j <= 7 ){
+        while (j <= 7 && array.getJSONObject(j).getInt("id_super")==1){
             DataAdapter GetDataAdapter3 = new DataAdapter();
 
+            GetDataAdapter3.setImageTitle(array.getJSONObject(j).getString("image_title"));
+            // Adding image title name in array to display on RecyclerView click event.
+            ImageTitleNameArrayListForClick.add(array.getJSONObject(j).getString("image_title"));
+            GetDataAdapter3.setImageUrl(array.getJSONObject(j).getString("image_url"));
+            ListOfdataAdapter.add(GetDataAdapter3);
 
-            if (array.getJSONObject(j).getInt("id_super")==7){
 
-                GetDataAdapter3.setImageTitle(array.getJSONObject(j).getString("image_title"));
-                // Adding image title name in array to display on RecyclerView click event.
-                ImageTitleNameArrayListForClick.add(array.getJSONObject(j).getString("image_title"));
-                GetDataAdapter3.setImageUrl(array.getJSONObject(j).getString("image_url"));
-                ListOfdataAdapter.add(GetDataAdapter3);
-            }
+            j = j +1;
 
         }
 

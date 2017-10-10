@@ -17,7 +17,6 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +103,11 @@ public class ProductActivity extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        ParseJSonResponse(response);
+                        try {
+                            ParseJSonResponse(response);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -117,25 +120,48 @@ public class ProductActivity extends AppCompatActivity {
         requestQueue.add(RequestOfJSonArray);
     }
 
-    public void ParseJSonResponse(JSONArray array) {
-        for(int i = 0; i<array.length(); i++) {
-            DataAdapter GetDataAdapter2 = new DataAdapter();
-            JSONObject json = null;
-            try {
+    public void ParseJSonResponse(JSONArray array) throws JSONException {
 
-                json = array.getJSONObject(i);
-                GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+        int j = 0;
+        while (j <= 7 ){
+            DataAdapter GetDataAdapter3 = new DataAdapter();
+
+
+            if (array.getJSONObject(j).getInt("id_super")==7){
+
+                GetDataAdapter3.setImageTitle(array.getJSONObject(j).getString("image_title"));
                 // Adding image title name in array to display on RecyclerView click event.
-                ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-                GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+                ImageTitleNameArrayListForClick.add(array.getJSONObject(j).getString("image_title"));
+                GetDataAdapter3.setImageUrl(array.getJSONObject(j).getString("image_url"));
+                ListOfdataAdapter.add(GetDataAdapter3);
             }
-            ListOfdataAdapter.add(GetDataAdapter2);
+
         }
+
         recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
         recyclerView.setAdapter(recyclerViewadapter);
+
+//        for(int i = 0; i<array.length(); i++) {
+//            DataAdapter GetDataAdapter2 = new DataAdapter();
+//            JSONObject json = null;
+//            try {
+//
+//                json = array.getJSONObject(i);
+//                GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+//                // Adding image title name in array to display on RecyclerView click event.
+//                ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
+//                GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
+//
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//            ListOfdataAdapter.add(GetDataAdapter2);
+//        }
+//
+//        recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
+//        recyclerView.setAdapter(recyclerViewadapter);
+
     }
 
 

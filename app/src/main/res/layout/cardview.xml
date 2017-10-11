@@ -27,16 +27,16 @@
             android:layout_marginBottom="10dp"/>
 
         <TextView
+            android:id="@+id/ImageNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/VolleyImageView"
-            android:layout_toEndOf="@+id/VolleyImageView"
-            android:layout_marginLeft="20dp"
-            android:textSize="20dp"
-            android:textColor="#000"
-            android:text="JSon Image Name"
-            android:id="@+id/ImageNameTextView"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/VolleyImageView"
+            android:layout_toRightOf="@+id/VolleyImageView"
+            android:text="JSon Image Name"
+            android:textColor="@android:color/background_dark"
+            android:textSize="20dp"
             tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
 
     </RelativeLayout>

@@ -135,7 +135,8 @@ public class ProductActivity extends AppCompatActivity {
                 GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
                 // Adding image title name in array to display on RecyclerView click event.
                 ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-                GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
+                GetDataAdapter2.setImageUrl(array.getJSONObject(i).getString("image_url"));
+
 
             } catch (JSONException e) {
                 e.printStackTrace();

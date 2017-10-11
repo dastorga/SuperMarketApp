@@ -120,10 +120,6 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     public void ParseJSonResponse(JSONArray array) throws JSONException {
-//        Bundle bundle = getIntent().getExtras();
-//        int dato = bundle.getInt("id_super");
-//        Toast.makeText(ProductActivity.this, "dato: " + dato, Toast.LENGTH_LONG).show();
-
         for(int i = 0; i<array.length(); i++) {
             DataAdapter GetDataAdapter2 = new DataAdapter();
             JSONObject json = null;
@@ -146,6 +142,11 @@ public class ProductActivity extends AppCompatActivity {
     }
 
 }
+
+
+//        Bundle bundle = getIntent().getExtras();
+//        int dato = bundle.getInt("id_super");
+//        Toast.makeText(ProductActivity.this, "dato: " + dato, Toast.LENGTH_LONG).show();
 
 
 //        int j = 0;

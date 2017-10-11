@@ -91,6 +91,9 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
+        } else if (id == R.id.list) { //TODOS LOS PRODUCTOS
+            startActivity(new Intent(getApplicationContext(), ProductActivity.class));
+
         } else if (id == R.id.nav_send) {
 
         }

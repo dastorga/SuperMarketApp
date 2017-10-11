@@ -18,6 +18,13 @@
             android:icon="@drawable/ic_add_shopping_cart_black_24dp"
             android:title="Canastas"
             tools:ignore="HardcodedText" />
+
+        <item
+            android:id="@+id/list"
+            android:icon="@drawable/ic_list_black_24dp"
+            android:title="Todos los Productos"
+            tools:ignore="HardcodedText" />
+
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

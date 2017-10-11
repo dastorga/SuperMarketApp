@@ -1,14 +1,12 @@
 package com.example.dario.supermarketapp;
 
 
-public class DataAdapter {
+public class DataAdapterProduct {
 
     public String ImageURL;
     public String ImageTitle;
-    public String Adress;
-
-//    public String price;
-//    public String description;
+    public String Price;
+    public String Description;
 
 
     public String getImageUrl() {
@@ -27,12 +25,20 @@ public class DataAdapter {
         this.ImageTitle = Imagetitlename;
     }
 
-    public void setAdress(String Adress) {
-        this.Adress = Adress;
+    public void setPrice(String Price) {
+        this.Price = Price;
     }
 
-    public String getAdress() {
-        return  this.Adress;
+    public String getPrice() {
+        return  this.Price;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
+    }
+
+    public String getDescription() {
+        return  this.Description;
     }
 
 }

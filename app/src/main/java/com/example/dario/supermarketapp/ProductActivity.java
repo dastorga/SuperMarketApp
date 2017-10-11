@@ -31,6 +31,8 @@ public class ProductActivity extends AppCompatActivity {
     String Id_Super_JSON = "id_super"; //Foreing Key
     String Image_Name_JSON = "image_title";
     String Image_URL_JSON = "image_url";
+    String Descrioption_JSON = "description";
+    String Price_JSON = "price";
 
     JsonArrayRequest RequestOfJSonArray ;
     RequestQueue requestQueue ;
@@ -131,7 +133,7 @@ public class ProductActivity extends AppCompatActivity {
                 ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
                 GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
 
-                //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
+                //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Descrioption_JSON));
                 //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
 
             } catch (JSONException e) {

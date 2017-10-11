@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -121,10 +120,9 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     public void ParseJSonResponse(JSONArray array) throws JSONException {
-
-        Bundle bundle = getIntent().getExtras();
-        int dato = bundle.getInt("id_super");
-        Toast.makeText(ProductActivity.this, "dato: " + dato, Toast.LENGTH_LONG).show();
+//        Bundle bundle = getIntent().getExtras();
+//        int dato = bundle.getInt("id_super");
+//        Toast.makeText(ProductActivity.this, "dato: " + dato, Toast.LENGTH_LONG).show();
 
         for(int i = 0; i<array.length(); i++) {
             DataAdapter GetDataAdapter2 = new DataAdapter();
@@ -135,8 +133,7 @@ public class ProductActivity extends AppCompatActivity {
                 GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
                 // Adding image title name in array to display on RecyclerView click event.
                 ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-                GetDataAdapter2.setImageUrl(array.getJSONObject(i).getString("image_url"));
-
+                GetDataAdapter2.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -144,16 +141,11 @@ public class ProductActivity extends AppCompatActivity {
 
             ListOfdataAdapter.add(GetDataAdapter2);
         }
-
         recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
         recyclerView.setAdapter(recyclerViewadapter);
-
     }
 
 }
-
-
-
 
 
 //        int j = 0;

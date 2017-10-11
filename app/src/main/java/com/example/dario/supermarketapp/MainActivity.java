@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Opcion aun no habilitada", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.list) { //TODOS LOS PRODUCTOS
             startActivity(new Intent(getApplicationContext(), ProductActivity.class));
-
         } else if (id == R.id.nav_send) {
 
         }

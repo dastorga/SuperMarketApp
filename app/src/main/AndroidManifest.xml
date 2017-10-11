@@ -30,8 +30,8 @@
 
         <activity
             android:name=".ProductActivity"
-            android:label="Productos"
-            android:parentActivityName=".SuperActivity">
+            android:label="Lista de Productos"
+            android:parentActivityName=".MainActivity">
         </activity>
 
     </application>

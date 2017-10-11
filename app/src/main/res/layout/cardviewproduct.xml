@@ -41,7 +41,7 @@
         <TextView
             android:id="@+id/DescriptionProductTextView"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="50dp"
             android:layout_alignStart="@+id/NameProducTextView"
             android:text="Description"
             android:layout_alignParentEnd="true"
@@ -49,15 +49,15 @@
             tools:ignore="HardcodedText" />
 
         <TextView
-            android:id="@+id/ProceProducTextView"
+            android:id="@+id/PriceProducTextView"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignStart="@+id/DescriptionProductTextView"
-            android:layout_below="@+id/DescriptionProductTextView"
             android:text="Price"
             android:textColor="@color/colorPrimaryDark"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            android:layout_alignBottom="@+id/VolleyImageView"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/DescriptionProductTextView" />
 
 
     </RelativeLayout>

@@ -29,6 +29,8 @@ public class SuperActivity extends AppCompatActivity {
     String SUPER_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/SupersJsonData.php";
     String Image_Name_JSON = "image_title";
     String Image_URL_JSON = "image_url";
+    String Adress_JSON = "adress";
+
     JsonArrayRequest RequestOfJSonArray ;
     RequestQueue requestQueue ;
     View view ;
@@ -117,23 +119,23 @@ public class SuperActivity extends AppCompatActivity {
 
     public void ParseJSonResponse(JSONArray array){
         for(int i = 0; i<array.length(); i++) {
-            DataAdapter GetDataAdapter2 = new DataAdapter();
+            DataAdapter GetDataAdapter = new DataAdapter();
             JSONObject json = null;
             try {
-
                 json = array.getJSONObject(i);
 
-                GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+                GetDataAdapter.setImageTitle(json.getString(Image_Name_JSON));
 
-                // Adding image title name in array to display on RecyclerView click event.
                 ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
 
-                GetDataAdapter2.setImageUrl(json.getString(Image_URL_JSON));
+                GetDataAdapter.setAdress(json.getString(Adress_JSON));
+
+                GetDataAdapter.setImageUrl(json.getString(Image_URL_JSON));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            ListOfdataAdapter.add(GetDataAdapter2);
+            ListOfdataAdapter.add(GetDataAdapter);
         }
         recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
         recyclerView.setAdapter(recyclerViewadapter);

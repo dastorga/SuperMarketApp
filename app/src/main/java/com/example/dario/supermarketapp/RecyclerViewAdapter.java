@@ -44,6 +44,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         Viewholder.VollyImageView.setImageUrl(dataAdapterOBJ.getImageUrl(), imageLoader);
         Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
+        Viewholder.AdressTextView.setText(dataAdapterOBJ.getAdress());
     }
 
     @Override
@@ -53,13 +54,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView ImageTitleTextView;
+        public TextView ImageTitleTextView,AdressTextView;
         public NetworkImageView VollyImageView ;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ImageTitleTextView = (TextView) itemView.findViewById(R.id.ImageNameTextView) ;
-            VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView) ;
+            ImageTitleTextView = (TextView) itemView.findViewById(R.id.ImageNameTextView);
+            AdressTextView = (TextView) itemView.findViewById(R.id.AdressTextView);
+            VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView);
         }
     }
 }

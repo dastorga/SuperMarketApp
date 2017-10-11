@@ -11,7 +11,6 @@ import com.android.volley.toolbox.DiskBasedCache;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.ImageLoader;
 
-
 public class ImageAdapter {
 
     public static ImageAdapter imageAdapter;
@@ -23,11 +22,8 @@ public class ImageAdapter {
     LruCache<String, Bitmap> LRUCACHE = new LruCache<String, Bitmap>(30);
 
     private ImageAdapter(Context context) {
-
         this.context1 = context;
-
         this.requestQueue1 = RequestQueueFunction();
-
         Imageloader1 = new ImageLoader(requestQueue1, new ImageLoader.ImageCache() {
 
             @Override

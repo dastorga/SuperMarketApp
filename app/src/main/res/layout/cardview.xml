@@ -30,14 +30,26 @@
             android:id="@+id/ImageNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
-            android:layout_toEndOf="@+id/VolleyImageView"
-            android:layout_toRightOf="@+id/VolleyImageView"
             android:text="JSon Image Name"
             android:textColor="@android:color/background_dark"
             android:textSize="20dp"
-            tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
+            tools:ignore="HardcodedText,RtlHardcoded,SpUsage"
+            android:layout_marginStart="22dp"
+            android:layout_alignTop="@+id/VolleyImageView"
+            android:layout_toEndOf="@+id/VolleyImageView" />
+
+        <TextView
+            android:id="@+id/AdressTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/ImageNameTextView"
+            android:layout_centerVertical="true"
+            android:text="Adress"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="18dp"
+            tools:ignore="HardcodedText,SpUsage" />
 
     </RelativeLayout>
 

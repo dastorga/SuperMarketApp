@@ -121,21 +121,24 @@ public class ProductActivity extends AppCompatActivity {
 
     public void ParseJSonResponse(JSONArray array) throws JSONException {
         for(int i = 0; i<array.length(); i++) {
-            DataAdapter GetDataAdapter2 = new DataAdapter();
+            DataAdapter GetDataAdapter = new DataAdapter();
             JSONObject json = null;
             try {
 
                 json = array.getJSONObject(i);
-                GetDataAdapter2.setImageTitle(json.getString(Image_Name_JSON));
+                GetDataAdapter.setImageTitle(json.getString(Image_Name_JSON));
                 // Adding image title name in array to display on RecyclerView click event.
                 ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-                GetDataAdapter2.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
+                GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
+
+                //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
+                //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            ListOfdataAdapter.add(GetDataAdapter2);
+            ListOfdataAdapter.add(GetDataAdapter);
         }
         recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
         recyclerView.setAdapter(recyclerViewadapter);

@@ -5,6 +5,7 @@ public class DataAdapter {
 
     public String ImageURL;
     public String ImageTitle;
+    public String Adress;
 
     public String getImageUrl() {
         return ImageURL;
@@ -20,6 +21,14 @@ public class DataAdapter {
 
     public void setImageTitle(String Imagetitlename) {
         this.ImageTitle = Imagetitlename;
+    }
+
+    public void setAdress(String Adress) {
+        this.Adress = Adress;
+    }
+
+    public String getAdress() {
+        return  this.Adress;
     }
 
 }

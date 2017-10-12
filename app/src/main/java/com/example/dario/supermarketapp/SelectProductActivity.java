@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ProductActivity extends AppCompatActivity {
+public class SelectProductActivity extends AppCompatActivity {
 
     List<DataAdapterProduct> ListOfdataAdapter;
     RecyclerView recyclerView;
@@ -68,7 +68,7 @@ public class ProductActivity extends AppCompatActivity {
         // Implementing Click Listener on RecyclerView.
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
 
-            GestureDetector gestureDetector = new GestureDetector(ProductActivity.this, new GestureDetector.SimpleOnGestureListener() {
+            GestureDetector gestureDetector = new GestureDetector(SelectProductActivity.this, new GestureDetector.SimpleOnGestureListener() {
 
                 @Override
                 public boolean onSingleTapUp(MotionEvent motionEvent) {
@@ -120,7 +120,7 @@ public class ProductActivity extends AppCompatActivity {
 
                     }
                 });
-        requestQueue = Volley.newRequestQueue(ProductActivity.this);
+        requestQueue = Volley.newRequestQueue(SelectProductActivity.this);
         requestQueue.add(RequestOfJSonArray);
     }
 

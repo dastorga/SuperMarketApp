@@ -21,25 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".SuperActivity"
             android:label="Supermercados Adheridos"
-            android:parentActivityName=".MainActivity">
-        </activity>
-
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".ProductActivity"
             android:label="Lista de Productos"
-            android:parentActivityName=".MainActivity">
-        </activity>
-
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name=".SelectProductActivity"
             android:label="Productos"
-            android:parentActivityName=".SuperActivity">
-        </activity>
-
+            android:parentActivityName=".SuperActivity"></activity>
+        <activity android:name=".CanastaActivity"></activity>
     </application>
 
 </manifest>

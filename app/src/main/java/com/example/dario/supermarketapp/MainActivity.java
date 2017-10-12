@@ -85,7 +85,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) { //SUPERMERCADOS
             startActivity(new Intent(getApplicationContext(), SuperActivity.class));
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_slideshow) {//CANASTAS
+            startActivity(new Intent(getApplicationContext(), CanastaActivity.class));
 
         } else if (id == R.id.nav_manage) {
 

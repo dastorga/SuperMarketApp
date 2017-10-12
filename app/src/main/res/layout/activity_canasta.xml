@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context="com.example.dario.supermarketapp.CanastaActivity">
 
+
+    <RelativeLayout
+        android:layout_width="366dp"
+        android:layout_height="489dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="6dp">
+
+
+        <Button
+            android:id="@+id/btnCanastaBasica"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_alignStart="@+id/btnCanastaMedia"
+            android:layout_below="@+id/SeleccionTV"
+            android:layout_marginTop="49dp"
+            android:background="@android:color/holo_orange_light"
+            android:elevation="10dp"
+            android:text="Basica"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnCanastaMedia"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_alignEnd="@+id/SeleccionTV"
+            android:layout_below="@+id/btnCanastaBasica"
+            android:layout_marginTop="35dp"
+            android:background="@color/colorPrimary"
+            android:elevation="10dp"
+            android:text="Media"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/SeleccionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp"
+            android:text="Seleccione una canasta de comestibles."
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="18sp"
+            tools:ignore="HardcodedText"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="12dp" />
+
+        <Button
+            android:id="@+id/btnCanastaAlta"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_alignStart="@+id/btnCanastaMedia"
+            android:layout_below="@+id/btnCanastaMedia"
+            android:layout_marginTop="38dp"
+            android:background="@android:color/holo_red_light"
+            android:elevation="10dp"
+            android:text="Alta"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+
+    </RelativeLayout>
+
+
 </android.support.constraint.ConstraintLayout>

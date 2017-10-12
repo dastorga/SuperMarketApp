@@ -29,11 +29,15 @@
             android:name=".ProductActivity"
             android:label="Lista de Productos"
             android:parentActivityName=".MainActivity"></activity>
+
         <activity
             android:name=".SelectProductActivity"
             android:label="Productos"
             android:parentActivityName=".SuperActivity"></activity>
-        <activity android:name=".CanastaActivity"></activity>
-    </application>
+
+        <activity
+            android:name=".CanastaActivity"
+            android:label="Seleccion de Canasta"
+            android:parentActivityName=".MainActivity"/></application>
 
 </manifest>

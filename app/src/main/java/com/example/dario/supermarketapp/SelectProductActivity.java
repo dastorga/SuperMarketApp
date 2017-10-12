@@ -24,11 +24,12 @@ import java.util.List;
 
 public class SelectProductActivity extends AppCompatActivity {
 
+    Bundle bundle = getIntent().getExtras();
+    int dato = bundle.getInt("id_super");
+
     List<DataAdapterProduct> ListOfdataAdapter;
     RecyclerView recyclerView;
-    String PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/ProductsJsonData.php";
-
-//    String PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/SelectProductsJsonData.php?id_super="+7;
+    String PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/SelectProductsJsonData.php?id_super="+dato;
 
     String Id_Product_JSON = "id_product";
     String Id_Super_JSON = "id_super"; //Foreing Key

@@ -34,6 +34,12 @@
             android:parentActivityName=".MainActivity">
         </activity>
 
+        <activity
+            android:name=".SelectProductActivity"
+            android:label="Productos"
+            android:parentActivityName=".SuperActivity">
+        </activity>
+
     </application>
 
 </manifest>

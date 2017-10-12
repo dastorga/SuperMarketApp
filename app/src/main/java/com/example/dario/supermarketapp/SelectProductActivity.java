@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,13 +25,10 @@ import java.util.List;
 
 public class SelectProductActivity extends AppCompatActivity {
 
-    Bundle bundle = getIntent().getExtras();
-    int dato = bundle.getInt("id_super");
-
     List<DataAdapterProduct> ListOfdataAdapter;
     RecyclerView recyclerView;
-    String PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/SelectProductsJsonData.php?id_super="+dato;
 
+    String PRODUCT_HTTP_JSON_URL;
     String Id_Product_JSON = "id_product";
     String Id_Super_JSON = "id_super"; //Foreing Key
     String Image_Name_JSON = "image_title";
@@ -63,6 +61,12 @@ public class SelectProductActivity extends AppCompatActivity {
         layoutManagerOfrecyclerView = new LinearLayoutManager(this);
 
         recyclerView.setLayoutManager(layoutManagerOfrecyclerView);
+
+        Bundle bundle = getIntent().getExtras();
+        int dato = bundle.getInt("id_super");
+        Toast.makeText(SelectProductActivity.this, "dato: " + dato, Toast.LENGTH_LONG).show();
+
+        PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/SelectProductsJsonData.php?id_super="+dato;
 
         JSON_HTTP_CALL();
 
@@ -153,8 +157,3 @@ public class SelectProductActivity extends AppCompatActivity {
     }
 
 }
-
-
-//        Bundle bundle = getIntent().getExtras();
-//        int dato = bundle.getInt("id_super");
-//        Toast.makeText(ProductActivity.this, "dato: " + dato, Toast.LENGTH_LONG).show();

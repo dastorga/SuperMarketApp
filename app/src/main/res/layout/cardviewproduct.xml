@@ -18,45 +18,58 @@
         android:background="#ECEFF1">
 
         <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/VolleyImageView"
+            android:id="@+id/ProductImageView"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:src="@mipmap/ic_launcher"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"/>
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/NameProducTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/ProductImageView"
             android:text="Name Product"
             android:textColor="@android:color/background_dark"
             android:textSize="20dp"
-            tools:ignore="HardcodedText,RtlHardcoded,SpUsage"
-            android:layout_marginStart="22dp"
-            android:layout_alignTop="@+id/VolleyImageView"
-            android:layout_toEndOf="@+id/VolleyImageView" />
+            tools:ignore="HardcodedText,RtlHardcoded,SpUsage" />
 
         <TextView
             android:id="@+id/DescriptionProductTextView"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_alignStart="@+id/NameProducTextView"
-            android:text="Description"
             android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/NameProducTextView"
             android:layout_below="@+id/NameProducTextView"
+            android:layout_toEndOf="@+id/ProductImageView"
+            android:text="Description"
             tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/PriceProducTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="45dp"
             android:layout_height="25dp"
             android:text="Price"
             android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
             tools:ignore="HardcodedText"
-            android:layout_alignBottom="@+id/VolleyImageView"
-            android:layout_alignParentEnd="true"
+            android:layout_marginStart="18dp"
+            android:layout_alignBaseline="@+id/Signo"
+            android:layout_alignBottom="@+id/Signo"
+            android:layout_alignStart="@+id/Signo" />
+
+        <TextView
+            android:id="@+id/Signo"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ProductImageView"
+            android:text="$"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            tools:ignore="HardcodedText"
             android:layout_alignStart="@+id/DescriptionProductTextView" />
 
 

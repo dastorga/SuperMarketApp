@@ -3,41 +3,41 @@ package com.example.dario.supermarketapp;
 
 public class DataAdapterProduct {
 
-    public String ImageURL;
-    public String ImageTitle;
-    public String Price;
-    public String Description;
+    private String ImageURL;
+    private String ImageTitle;
+    private String Price;
+    private String Description;
 
 
-    public String getImageUrl() {
+    public String getImageUrlProduct() {
         return ImageURL;
     }
 
-    public void setImageUrl(String imageServerUrl) {
+    public void setImageUrlProduct(String imageServerUrl) {
         this.ImageURL = imageServerUrl;
     }
 
-    public String getImageTitle() {
+    public String getImageTitleProduct() {
         return ImageTitle;
     }
 
-    public void setImageTitle(String Imagetitlename) {
+    public void setImageTitleProduct(String Imagetitlename) {
         this.ImageTitle = Imagetitlename;
     }
 
-    public void setPrice(String Price) {
+    public void setPriceProduct(String Price) {
         this.Price = Price;
     }
 
-    public String getPrice() {
+    public String getPriceProduct() {
         return  this.Price;
     }
 
-    public void setDescription(String Description) {
+    public void setDescriptionProduct(String Description) {
         this.Description = Description;
     }
 
-    public String getDescription() {
+    public String getDescriptionProduct() {
         return  this.Description;
     }
 

@@ -24,14 +24,14 @@ import java.util.List;
 
 public class ProductActivity extends AppCompatActivity {
 
-    List<DataAdapter> ListOfdataAdapter;
+    List<DataAdapterProduct> ListOfdataAdapter;
     RecyclerView recyclerView;
     String PRODUCT_HTTP_JSON_URL = "https://appventasweb.000webhostapp.com/ProductsJsonData.php";
     String Id_Product_JSON = "id_product";
     String Id_Super_JSON = "id_super"; //Foreing Key
     String Image_Name_JSON = "image_title";
     String Image_URL_JSON = "image_url";
-    String Descrioption_JSON = "description";
+    String Description_JSON = "description";
     String Price_JSON = "price";
 
     JsonArrayRequest RequestOfJSonArray ;
@@ -123,26 +123,28 @@ public class ProductActivity extends AppCompatActivity {
 
     public void ParseJSonResponse(JSONArray array) throws JSONException {
         for(int i = 0; i<array.length(); i++) {
-            DataAdapter GetDataAdapter = new DataAdapter();
+            DataAdapterProduct GetDataAdapter = new DataAdapterProduct();
             JSONObject json = null;
             try {
 
                 json = array.getJSONObject(i);
-                GetDataAdapter.setImageTitle(json.getString(Image_Name_JSON));
+                GetDataAdapter.setImageTitleProduct(json.getString(Image_Name_JSON));
+
                 // Adding image title name in array to display on RecyclerView click event.
                 ImageTitleNameArrayListForClick.add(json.getString(Image_Name_JSON));
-                GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
 
-                //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Descrioption_JSON));
-                //GetDataAdapter.setImageUrl(array.getJSONObject(i).getString(Image_URL_JSON));
+                GetDataAdapter.setImageUrlProduct(array.getJSONObject(i).getString(Image_URL_JSON));
+
+                GetDataAdapter.setDescriptionProduct(array.getJSONObject(i).getString(Description_JSON));
+
+                GetDataAdapter.setPriceProduct(array.getJSONObject(i).getString(Price_JSON));
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             ListOfdataAdapter.add(GetDataAdapter);
         }
-        recyclerViewadapter = new RecyclerViewAdapter(ListOfdataAdapter, this);
+        recyclerViewadapter = new RecyclerViewAdapterProduct(ListOfdataAdapter, this);
         recyclerView.setAdapter(recyclerViewadapter);
     }
 

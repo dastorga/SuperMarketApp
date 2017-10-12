@@ -26,7 +26,7 @@ public class RecyclerViewAdapterProduct extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardviewproduct, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -36,17 +36,17 @@ public class RecyclerViewAdapterProduct extends RecyclerView.Adapter<RecyclerVie
 
         DataAdapterProduct dataAdapterOBJ =  dataAdapters.get(position);
         imageLoader = ImageAdapter.getInstance(context).getImageLoader();
-        imageLoader.get(dataAdapterOBJ.getImageUrl(),
+        imageLoader.get(dataAdapterOBJ.getImageUrlProduct(),
                 ImageLoader.getImageListener(
-                        Viewholder.VollyImageView,//Server Image
+                        Viewholder.ProductImageView,//Server Image
                         R.mipmap.ic_launcher,//Before loading server image the default showing image.
                         android.R.drawable.ic_dialog_alert //Error image if requested image dose not found on server.
                 )
         );
-        Viewholder.VollyImageView.setImageUrl(dataAdapterOBJ.getImageUrl(), imageLoader);
-        Viewholder.ImageTitleTextView.setText(dataAdapterOBJ.getImageTitle());
-        Viewholder.DescriptionProductTextView.setText(dataAdapterOBJ.getDescription());
-        Viewholder.PriceProducTextView.setText(dataAdapterOBJ.getPrice());
+        Viewholder.ProductImageView.setImageUrl(dataAdapterOBJ.getImageUrlProduct(), imageLoader);
+        Viewholder.NameProducTextView.setText(dataAdapterOBJ.getImageTitleProduct());
+        Viewholder.DescriptionProductTextView.setText(dataAdapterOBJ.getDescriptionProduct());
+        Viewholder.PriceProducTextView.setText(dataAdapterOBJ.getPriceProduct());
     }
 
     @Override
@@ -55,15 +55,15 @@ public class RecyclerViewAdapterProduct extends RecyclerView.Adapter<RecyclerVie
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        public TextView ImageTitleTextView,DescriptionProductTextView,PriceProducTextView;
-        public NetworkImageView VollyImageView ;
+        public TextView NameProducTextView,DescriptionProductTextView,PriceProducTextView;
+        public NetworkImageView ProductImageView ;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            ImageTitleTextView = (TextView) itemView.findViewById(R.id.ImageNameTextView);
+            NameProducTextView = (TextView) itemView.findViewById(R.id.NameProducTextView);
             DescriptionProductTextView = (TextView) itemView.findViewById(R.id.DescriptionProductTextView);
             PriceProducTextView = (TextView) itemView.findViewById(R.id.PriceProducTextView);
-            VollyImageView = (NetworkImageView) itemView.findViewById(R.id.VolleyImageView);
+            ProductImageView = (NetworkImageView) itemView.findViewById(R.id.ProductImageView);
         }
     }
 }

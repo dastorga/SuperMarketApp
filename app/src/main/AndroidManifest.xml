@@ -38,6 +38,13 @@
         <activity
             android:name=".CanastaActivity"
             android:label="Seleccion de Canasta"
-            android:parentActivityName=".MainActivity"/></application>
+            android:parentActivityName=".MainActivity"/>
+
+        <activity
+            android:name=".SelectSuper"
+            android:label="Seleccion de Supermercado"
+            android:parentActivityName=".CanastaActivity"/>
+
+    </application>
 
 </manifest>

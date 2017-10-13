@@ -20,19 +20,25 @@ public class CanastaActivity extends AppCompatActivity {
 
         btnCanastaBasica.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SuperActivity.class));
+                Intent intentCanasta = new  Intent(getApplicationContext(), SelectSuper.class);
+                intentCanasta.putExtra("canasta",1);
+                startActivity(intentCanasta);
             }
         });
 
         btnCanastaMedia.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SuperActivity.class));
+                Intent intentCanasta = new  Intent(getApplicationContext(), SelectSuper.class);
+                intentCanasta.putExtra("canasta",2);
+                startActivity(intentCanasta);
             }
         });
 
         btnCanastaAlta.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SuperActivity.class));
+                Intent intentCanasta = new  Intent(getApplicationContext(), SelectSuper.class);
+                intentCanasta.putExtra("canasta",3);
+                startActivity(intentCanasta);
             }
         });
 

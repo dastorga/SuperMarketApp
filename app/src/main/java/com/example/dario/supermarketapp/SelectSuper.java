@@ -81,7 +81,13 @@ public class SelectSuper extends AppCompatActivity {
                     // Showing RecyclerView Clicked Item value using Toast.
 
                     Intent intent = new  Intent(getApplicationContext(), SelectProductActivity.class);
+
+                    Bundle bund = getIntent().getExtras();
+                    int datoCanasta = bund.getInt("canasta");
+
+                    intent.putExtra("canasta",datoCanasta);
                     intent.putExtra("id_super",RecyclerViewItemPosition+1);
+
                     startActivity(intent);
                 }
                 return false;
